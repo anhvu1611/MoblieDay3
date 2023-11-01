@@ -1,90 +1,26 @@
+import { NavigationContainer } from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import first from "../Buoi3_GD1/screens/first"
+import manHinh1b from ".././Buoi3_GD1/screens/manHinh1b"
+import manHinh1c from ".././Buoi3_GD1/screens/manHinh1c"
+import manHinh1d from ".././Buoi3_GD1/screens/manHinh1d"
+import manHinh1e from ".././Buoi3_GD1/screens/manHinh1e"
+import manHinh2a from ".././Buoi3_GD1/screens/manHinh2a"
+import manHinh2b from ".././Buoi3_GD1/screens/manHinh2b"
 
-import { StyleSheet, Text, View, Button} from 'react-native';
-
+const Stack = createStackNavigator();
 export default function App() {
   return (
-    <View style={styles.container}>
-      <View style={styles.cicle}></View>
-      
-      <View style={styles.view2}>
-        <Text style={styles.view_text}>GROW</Text>
-        <Text style={styles.view_text}>  
-          YOUR BUSINESS
-        </Text>
-      </View>
-
-      <View style={styles.view3}>
-        <Text style={styles.view_text2}>We will help you to grow your business using</Text>
-        <Text style={styles.view_text2}>online server</Text>
-      </View>
-
-      <View style={styles.view4}>
-        <Button title="LOGIN"  color='#E3C000'
-          titleStyle={{
-            color: "black",
-            fontSize: 20,
-        }}
-        ></Button>
-        <Button title="SIGN UP" color='#E3C000'></Button>
-
-
-        
-      </View>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='manHinh2b' screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="first" component={first} />
+        <Stack.Screen name="manHinh1b" component={manHinh1b} />
+        <Stack.Screen name="manHinh1c" component={manHinh1c} />
+        <Stack.Screen name="manHinh1d" component={manHinh1d} />
+        <Stack.Screen name="manHinh1e" component={manHinh1e} />
+        <Stack.Screen name="manHinh2a" component={manHinh2a} />
+        <Stack.Screen name="manHinh2b" component={manHinh2b} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundImage: 'linear-gradient(180deg, rgba(0, 204, 249, 0.36) 0%, #00CCF9 100%)',
-  },
-  cicle: {
-    width: 140,
-    height: 140,
-    marginTop: 105,
-    left: 130,
-    borderWidth: 15,
-    borderColor: "black",
-    borderRadius: 9999,
-  },
-  view2: {
-    justifyContent: "center",
-    alignItems: "center",
-    top: 50,
-
-  },
-  view_text: {
-    color: "black",
-    fontSize: 25,
-    fontFamily: "Roboto",
-    fontWeight: 700,
-    wordWrap: "break-word",
-  },
-  view3: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    top: 100,
-  },
-  view_text2: {
-    color: "black",
-    fontSize: 15,
-    fontFamily: "Roboto",
-    fontWeight: 700,
-    wordWrap: "break-word",
-  },
-
-  view4: {
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    flex: 1,
-    flexDirection: 'row'
-  },
-
-  btn: {
-    fontSize: 20,
-  }
-});
-
-
-//<div style="width: 100%; height: 100%; background: rgba(196, 196, 196, 0); border-radius: 9999px; border: 15px black solid"></div>
